@@ -1,0 +1,16 @@
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.0/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory>./tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <env name="KERNEL_CLASS" value="App\Kernel"/>
+        <env name="CORS_ALLOW_ORIGIN" value="^https?://localhost:?[0-9]*$" />
+        <env name="DATABASE_URL" value="mysql://username:password@127.0.0.1:3306/books?serverVersion=5.7" />
+    </php>
+</phpunit>

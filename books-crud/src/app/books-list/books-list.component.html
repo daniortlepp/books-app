@@ -1,0 +1,85 @@
+<style>
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-header h2 {
+  margin-bottom: 0;
+  flex: 1; /* Permite que o título ocupe espaço máximo */
+}
+
+.card-header .btn {
+  margin-top: 10px;
+  margin-left: auto; /* Empurra o botão para a direita */
+}
+
+/* Estilos para tabelas em dispositivos móveis */
+@media (max-width: 768px) {
+  .table thead {
+    display: none; /* Esconde o cabeçalho da tabela em telas pequenas */
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .table td {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+  }
+
+  .table td:last-child {
+    text-align: right;
+  }
+}
+</style>
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between">
+    <h4>Bem-vindo, {{ user.firstName }}</h4>
+    <button class="btn btn-light float-right" (click)="logout()">Logout</button>
+  </div>
+  <div class="card mt-4">
+    <div class="card-header d-flex justify-content-between flex-wrap">
+      <h2>Listagem de livros</h2>
+      <a class="btn btn-primary mb-3" routerLink="/books/create">Novo livro</a>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Título</th>
+              <th>Autor</th>
+              <th>Número de páginas</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let book of books">
+              <td>{{ book.title }}</td>
+              <td>{{ book.author }}</td>
+              <td>{{ book.numberOfPages }}</td>
+              <td>
+                <a class="btn btn-secondary me-2" [routerLink]="['/books/edit', book.id]">Editar</a>
+                <button class="btn btn-danger" (click)="deleteBook(book.id)">Excluir</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<style>
+.flex-responsive {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.text-sm {
+    margin: 0;
+    flex: 1;
+}
+
+@media (max-width: 576px) {
+  .flex-responsive {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .text-sm,
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+}
+</style>
+
+<div class="container mt-5">
+    <h2>Login</h2>
+    <form (submit)="login()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password">
+      </div>
+      <div class="flex-responsive">
+        <p class="mt-2">Ainda não tem cadastro? <a routerLink="/register">Cadastre-se aqui</a></p>
+        <button type="submit" class="btn btn-primary mt-2">Login</button>
+      </div>
+    </form>
+  </div>
+  
