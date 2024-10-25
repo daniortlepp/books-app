@@ -20,6 +20,7 @@
         "symfony/flex": "^2",
         "symfony/form": "6.4.*",
         "symfony/framework-bundle": "6.4.*",
+        "symfony/http-client": "6.4.*",
         "symfony/maker-bundle": "^1.61",
         "symfony/password-hasher": "6.4.*",
         "symfony/property-access": "6.4.*",

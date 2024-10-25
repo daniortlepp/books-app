@@ -1,34 +1,3 @@
-<style>
-.flex-responsive {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.text-sm {
-    margin: 0;
-    flex: 1;
-}
-
-@media (max-width: 576px) {
-  .flex-responsive {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .text-sm,
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  .btn {
-    margin-top: 10px;
-  }
-}
-</style>
-
 <div class="container mt-5">
     <h2>Login</h2>
     <form (submit)="login()">

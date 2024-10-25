@@ -1,0 +1,44 @@
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .card-header h2 {
+    margin-bottom: 0;
+    flex: 1;
+  }
+  
+  .card-header .btn {
+    margin-top: 10px;
+    margin-left: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .table thead {
+      display: none;
+    }
+  
+    .table tr {
+      display: block;
+      margin-bottom: 15px;
+    }
+  
+    .table td {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #ddd;
+    }
+  
+    .table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+    }
+  
+    .table td:last-child {
+      text-align: right;
+    }
+  }

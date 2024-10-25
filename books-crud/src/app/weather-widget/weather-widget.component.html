@@ -1,0 +1,16 @@
+<div class="weather-widget d-flex flex-column">
+    <h5>Clima Atual</h5>
+  
+    <div *ngIf="weatherData" class="d-flex flex-row align-items-center">
+        <img [src]="'https://assets.hgbrasil.com/weather/icons/conditions/' + weatherData.condition_slug + '.svg'" alt="Ícone do tempo" class="me-2" style="width: 40px;">
+        <p class="me-3 mt-1"><strong>{{ weatherData.city_name }}</strong></p>
+        <p class="me-3 mt-1">Temperatura: {{ weatherData.temp }}°C</p>
+        <p class="me-3 mt-1">Condição: {{ weatherData.description }}</p>
+    </div>
+    
+    <form (submit)="changeCity()" class="d-flex flex-row">
+      <input type="text" [(ngModel)]="city" name="city" class="form-control col-4" placeholder="Escolha a cidade" />
+      <button type="submit" class="btn btn-primary mt-2 cold-2">Atualizar</button>
+    </form>
+  </div>
+  

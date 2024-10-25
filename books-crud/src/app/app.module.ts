@@ -15,6 +15,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { LogoutComponent } from './logout/logout.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { WeatherWidgetComponent } from './weather-widget/weather-widget.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserRegisterComponent } from './user-register/user-register.component';
     BooksCreateComponent,
     BooksEditComponent,
     LogoutComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    WeatherWidgetComponent
   ],
   imports: [
     BrowserModule,
